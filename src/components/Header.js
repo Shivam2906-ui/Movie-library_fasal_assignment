@@ -36,7 +36,7 @@ const Header = () => {
 
     // unSubscribe when component is unmounts
     return () => unsubscribe();
-  }, []);
+  });
 
   // useSelector() is a hook that is used to read or see which cart items you are selected.
   const cartItems = useSelector((store) => store.cart.items);
