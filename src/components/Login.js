@@ -6,9 +6,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-// import { useDispatch } from "react-redux";
 
-// import { addUser } from "../utils/userSlice";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -17,7 +15,6 @@ const Login = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
 
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
 
   const email = useRef(null); //
   const password = useRef(null); //
@@ -38,8 +35,7 @@ const Login = () => {
         password.current.value
       )
         .then((userCredential) => {
-          const user = userCredential.user;
-          console.log(user);
+          // const user = userCredential.user;
           setIsSignedIn(true);
           navigate("/");
         })
@@ -57,8 +53,7 @@ const Login = () => {
       )
         .then((userCredential) => {
           // Signed in
-          const user = userCredential.user;
-          console.log(user);
+          // const user = userCredential.user;
           setIsSignedIn(true);
           navigate("/browse");
         })
